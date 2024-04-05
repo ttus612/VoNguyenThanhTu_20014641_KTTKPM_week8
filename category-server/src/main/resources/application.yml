@@ -1,10 +1,8 @@
 resilience4j:
-  retry:
+  rate-limiter:
     instances:
-      retryApi:
-        max-attempts: 15
-        wait-duration: 15s
-    metrics:
-      legacy:
-        enabled: true
-      enabled: true
+      orderService:
+        registerHealthIndicator: false
+        limitForPeriod: 2
+        limitRefreshPeriod: 10s
+        timeoutDuration: 3s

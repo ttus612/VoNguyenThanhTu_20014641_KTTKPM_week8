@@ -1,0 +1,10 @@
+resilience4j:
+  retry:
+    instances:
+      retryApi:
+        max-attempts: 15
+        wait-duration: 15s
+    metrics:
+      legacy:
+        enabled: true
+      enabled: true
